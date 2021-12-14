@@ -2,9 +2,9 @@
 
 # Load parameters
 from utility import execfileIfNeeded
-import inspect
+import inspect, os
 parameters = {}
-parametersFile = inspect.getfile( inspect.currentframe() )+"/../config/parameters.py"
+parametersFile = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))"/config/parameters.py"
 parametersFileInfo = {}
 execfileIfNeeded( parametersFile, parameters, parametersFileInfo )
 
