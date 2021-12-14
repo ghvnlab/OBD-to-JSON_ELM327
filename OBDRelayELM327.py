@@ -21,9 +21,9 @@ from utility import printT
 from utility import setConsoleColorWindows
 from utility import setConsoleTitle
 
-import inspect
-parametersFile = inspect.getfile( inspect.currentframe() )+"/../config/parameters.py"
-sequenceFile   = inspect.getfile( inspect.currentframe() )+"/../config/sequenceELM327.py"
+import inspect, os
+parametersFile = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))) +"/config/parameters.py"
+sequenceFile   = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))) +"/config/sequenceELM327.py"
 
 outputList = None
 outputListLock = None
